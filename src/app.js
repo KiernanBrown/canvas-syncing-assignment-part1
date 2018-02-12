@@ -4,6 +4,8 @@ const socketio = require('socket.io');
 
 const fs = require('fs');
 
+const port = process.env.PORT || process.env.NODE_PORT || 3000;
+
 let score = 0;
 
 const handler = (req, res) => {
@@ -19,7 +21,7 @@ const handler = (req, res) => {
 };
 
 const app = http.createServer(handler);
-app.listen(3000);
+app.listen(port);
 
 const io = socketio(app);
 
